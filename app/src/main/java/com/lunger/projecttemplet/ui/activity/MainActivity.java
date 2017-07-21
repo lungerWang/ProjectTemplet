@@ -1,7 +1,5 @@
 package com.lunger.projecttemplet.ui.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -9,7 +7,6 @@ import com.lunger.projecttemplet.R;
 import com.lunger.projecttemplet.ui.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
@@ -19,7 +16,7 @@ public class MainActivity extends BaseActivity {
     RelativeLayout mActivityMain;
 
     @Override
-    public int getLayoutId() {
+    public int bindLayout() {
         return R.layout.activity_main;
     }
 
@@ -30,6 +27,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void onEventMainThread(Object event) {
 
     }
 }
