@@ -47,6 +47,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.github.florent37:viewanimator:1.0.5'
     compile 'com.zhy:okhttputils:2.6.2'

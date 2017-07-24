@@ -24,16 +24,19 @@ public abstract class BaseActivity<T> extends AppCompatActivity{
         setContentView(bindLayout());
         EventBus.getDefault().register(this);
         mUnBinder = ButterKnife.bind(this);
-        initWidget();
         initData();
+        initWidget();
+        initListener();
         mContext = this;
     }
 
     public abstract int bindLayout();
 
+    public abstract void initData();
+
     public abstract void initWidget();
 
-    public abstract void initData();
+    protected abstract void initListener();
 
     @Override
     protected void onDestroy() {
