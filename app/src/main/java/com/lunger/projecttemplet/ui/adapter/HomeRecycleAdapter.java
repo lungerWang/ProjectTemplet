@@ -60,6 +60,8 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             initBanner((holder).view_pager, holder.ll_dot_container);
         }else if(position == 1){
             GoodsRecycleHolder holder = (GoodsRecycleHolder) viewHolder;
+            holder.rv.setFocusableInTouchMode(false);
+            holder.rv.requestFocus();
             initGoodsRecycler(holder.rv);
         }
     }

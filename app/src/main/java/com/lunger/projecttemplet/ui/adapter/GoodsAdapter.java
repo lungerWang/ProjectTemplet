@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.lunger.projecttemplet.R;
@@ -35,7 +36,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-
+        GoodsHolder holder = (GoodsHolder) viewHolder;
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "被点击", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

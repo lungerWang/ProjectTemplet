@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
     public void initWidget() {
         rlv.setAdapter(new HomeRecycleAdapter(this));
         rlv.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     @Override
