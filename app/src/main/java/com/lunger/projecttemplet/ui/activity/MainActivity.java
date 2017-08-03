@@ -1,11 +1,10 @@
 package com.lunger.projecttemplet.ui.activity;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.lunger.projecttemplet.R;
-import com.lunger.projecttemplet.ui.adapter.GoodsAdapter;
+import com.lunger.projecttemplet.ui.adapter.HomeRecycleAdapter;
 import com.lunger.projecttemplet.ui.base.BaseActivity;
 
 import butterknife.BindView;
@@ -29,7 +28,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initWidget() {
-        rlv.setAdapter(new GoodsAdapter(this));
+        rlv.setAdapter(new HomeRecycleAdapter(this));
         rlv.setLayoutManager(new LinearLayoutManager(this));
     }
 
