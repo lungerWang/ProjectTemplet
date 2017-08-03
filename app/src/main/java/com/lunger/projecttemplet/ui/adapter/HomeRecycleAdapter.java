@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.lunger.projecttemplet.R;
 import com.lunger.projecttemplet.SwitchTask;
 import com.lunger.projecttemplet.util.DensityUtils;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +33,14 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private List<ImageView> mBannerDots;
     private SwitchTask mSwitchTask;
 
+
     //模拟网络拿到的banner轮播图
     private String[] imageUrls = {"http://img.taodiantong.cn/v55183/infoimg/2013-07/130720115322ky.jpg",
             "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg",
             "http://pic18.nipic.com/20111215/577405_080531548148_2.jpg",
             "http://pic15.nipic.com/20110722/2912365_092519919000_2.jpg",
             "http://pic.58pic.com/58pic/12/64/27/55U58PICrdX.jpg"};
+    private GoodsAdapter mGoodsAdapter;
 
     public HomeRecycleAdapter(Context context) {
         mContext = context;
@@ -67,8 +71,10 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     private void initGoodsRecycler(RecyclerView rv) {
-        rv.setAdapter(new GoodsAdapter(mContext));
-        rv.setLayoutManager(new GridLayoutManager(mContext, 2));
+        mGoodsAdapter = new GoodsAdapter(mContext);
+        rv.setAdapter(mGoodsAdapter);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2);
+        rv.setLayoutManager(gridLayoutManager);
     }
 
     @Override
@@ -154,5 +160,10 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             super(itemView);
             rv = (RecyclerView) itemView.findViewById(R.id.rv);
         }
+    }
+
+    public void addData(){
+        mGoodsAdapter.add();
+        mGoodsAdapter.notifyDataSetChanged();
     }
 }

@@ -24,9 +24,13 @@ import java.util.List;
 
 public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context mContext;
+    private List<String> list = new ArrayList<>();
 
     public GoodsAdapter(Context context) {
         mContext = context;
+        for (int i = 0; i < 20; i++) {
+            list.add("123");
+        }
     }
 
     @Override
@@ -47,7 +51,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return 200;
+        return list.size();
     }
 
 
@@ -57,6 +61,12 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         public GoodsHolder(View itemView) {
             super(itemView);
             iv = (ImageView) itemView.findViewById(R.id.iv);
+        }
+    }
+
+    public void add(){
+        for (int i = 0; i < 20; i++) {
+            list.add("123");
         }
     }
 }
